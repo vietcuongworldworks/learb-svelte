@@ -1,15 +1,20 @@
 <script>
 	export let name;
-	let text = "123 text";
+	let text = "first text";
 	let para = "blue";
 
 	function handleClick() {
+		text = "#";
 		if (para === "blue") {
 			para = "red";
 		} else {
 			para = "blue";
 		}
 	}
+
+	// function handleInput(e) {
+	// 	text = e.target.value;
+	// }
 </script>
 
 <main>
@@ -18,9 +23,11 @@
 		Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
 		how to build Svelte apps.
 	</p>
-	<p>{text}</p>
+	<p style="background-color: {text};">{text}</p>
 	<p class="para" style="--text-color: {para};">Para: {para}</p>
-	<button on:click={() => handleClick()}>Change para text</button>
+	<button on:click={handleClick}>Change para text color</button>
+	<!-- <input type="text" on:input={handleInput} value={text} /> -->
+	<input type="text" bind:value={text} />
 </main>
 
 <style>
