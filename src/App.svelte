@@ -1,33 +1,32 @@
 <script>
 	export let name;
 	let text = "first text";
-	let para = "blue";
+	let colorText = "blue";
 
-	function handleClick() {
-		text = "#";
-		if (para === "blue") {
-			para = "red";
-		} else {
-			para = "blue";
-		}
+	let firstName = "Vietcuong";
+	let lastName = "Pham";
+
+	$: fullName = `${firstName} ${lastName}`;
+	$: {
+		console.log(text);
+		console.log(colorText);
 	}
 
-	// function handleInput(e) {
-	// 	text = e.target.value;
-	// }
+	function handleClick() {
+		console.log(fullName);
+	}
 </script>
 
+<!-- svelte-ignore non-top-level-reactive-declaration -->
 <main>
 	<h1>Hello {name}!</h1>
-	<p>
-		Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn
-		how to build Svelte apps.
-	</p>
-	<p style="background-color: {text};">{text}</p>
-	<p class="para" style="--text-color: {para};">Para: {para}</p>
-	<button on:click={handleClick}>Change para text color</button>
-	<!-- <input type="text" on:input={handleInput} value={text} /> -->
-	<input type="text" bind:value={text} />
+	<p class="para" style="--text-color: {colorText}">{colorText}</p>
+	<input type="text" bind:value={colorText} />
+
+	<p>{fullName}</p>
+	<input type="text" bind:value={firstName} />
+	<input type="text" bind:value={lastName} />
+	<button on:click={handleClick}>console.log</button>
 </main>
 
 <style>
