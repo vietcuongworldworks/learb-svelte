@@ -16,7 +16,12 @@
 				<p>
 					<b>Id: {person.id}</b><br />
 					Name: {person.name}<br />
-					Age: {person.age}
+					Age: {person.age}<br />
+					{#if person.id % 2 === 0}
+						Even
+					{:else}
+						Odd
+					{/if}
 				</p>
 				<button on:click={() => handleClick(person.id)}>Remove</button>
 			</li>

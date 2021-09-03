@@ -16,5 +16,11 @@
         "name": "pham vietcuong",
         "color": "green",
         "age": 26
+    },
+    {
+        "id": 4,
+        "name": "vietcuong pham",
+        "color": "yellow",
+        "age": 25
     }
 ]
