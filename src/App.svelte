@@ -1,10 +1,7 @@
 <script>
 	// export let name;
-	let people = [
-		{ id: 1, name: "vietcuong", color: "red", age: 27 },
-		{ id: 2, name: "pham", color: "blue", age: 28 },
-		{ id: 3, name: "pham vietcuong", color: "green", age: 26 },
-	];
+	import PeopleData from "../data/people.json";
+	let people = PeopleData;
 </script>
 
 <main>
