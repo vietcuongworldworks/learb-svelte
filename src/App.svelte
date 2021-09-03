@@ -2,6 +2,11 @@
 	// export let name;
 	import PeopleData from "../data/people.json";
 	let people = PeopleData;
+
+	function handleClick(deleteId) {
+		//Remove the person by id
+		people = people.filter((savePerson) => savePerson.id != deleteId);
+	}
 </script>
 
 <main>
@@ -13,6 +18,7 @@
 					Name: {person.name}<br />
 					Age: {person.age}
 				</p>
+				<button on:click={() => handleClick(person.id)}>Remove</button>
 			</li>
 		{:else}
 			<!-- if peole is empty -->
