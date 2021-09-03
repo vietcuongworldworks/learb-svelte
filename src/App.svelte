@@ -1,9 +1,9 @@
 <script>
 	// export let name;
 	let people = [
-		{ name: "vietcuong", color: "red", age: 27, id: 1 },
-		{ name: "pham", color: "blue", age: 28, id: 2 },
-		{ name: "pham vietcuong", color: "green", age: 26, id: 3 },
+		{ id: 1, name: "vietcuong", color: "red", age: 27 },
+		{ id: 2, name: "pham", color: "blue", age: 28 },
+		{ id: 3, name: "pham vietcuong", color: "green", age: 26 },
 	];
 </script>
 
