@@ -3,7 +3,7 @@
 </script>
 
 <main>
-	<Modal />
+	<Modal theProps={`in here!`} />
 </main>
 
 <style>

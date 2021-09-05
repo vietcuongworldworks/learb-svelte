@@ -1,5 +1,6 @@
 <script>
     import PeopleData from "../../data/people.json";
+    export let theProps = "default value";
 
     let people = PeopleData;
     let showModal = true;
@@ -16,7 +17,7 @@
 
 <div class="backdrop" class:promo={showModal}>
     <div class="modal">
-        <h1>The list of people</h1>
+        <h1>The list of people {theProps}</h1>
     </div>
 </div>
 <button on:click={modalTextHandle}>
