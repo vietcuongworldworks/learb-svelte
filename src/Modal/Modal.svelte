@@ -16,7 +16,7 @@
 </script>
 
 {#if showModal}
-    <div class="backdrop" class:promo={showModal} on:click>
+    <div class="backdrop" class:promo={showModal} on:click|self>
         <div class="modal">
             <h1>The list of people {theProps}</h1>
         </div>
