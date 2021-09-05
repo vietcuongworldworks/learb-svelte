@@ -3,7 +3,7 @@
     export let theProps = "default value";
 
     let people = PeopleData;
-    let showModal = true;
+    export let showModal = false;
 
     function handleClick(deleteId) {
         //Remove the person by id
@@ -15,15 +15,12 @@
     }
 </script>
 
-<div class="backdrop" class:promo={showModal}>
-    <div class="modal">
-        <h1>The list of people {theProps}</h1>
-    </div>
-</div>
-<button on:click={modalTextHandle}>
-    {showModal ? `Hide` : `Show`}
-</button>
 {#if showModal}
+    <div class="backdrop" class:promo={showModal} on:click>
+        <div class="modal">
+            <h1>The list of people {theProps}</h1>
+        </div>
+    </div>
     <ul>
         {#each people as person}
             <li>
@@ -44,24 +41,23 @@
         {/each}
     </ul>
 {/if}
+<button on:click={modalTextHandle}>
+    {showModal ? `Hide` : `Show`}
+</button>
 
 <style>
     .backdrop {
         width: 100%;
         height: 100%;
-        /* position: fixed; */
-        background: rgba(0, 0, 0, 0.8);
+        position: fixed;
+        background: rgba(0, 0, 0, 0.5);
     }
     .modal {
         padding: 10px;
         border-radius: 10px;
         max-width: 400px;
-        margin: auto;
+        margin: 10% auto;
         text-align: center;
-        background: white;
-    }
-
-    .promo {
         background: white;
     }
 
@@ -71,5 +67,9 @@
 
     .promo .modal h1 {
         color: white;
+    }
+
+    .promo {
+        background: rgba(255, 255, 255, 0.5);
     }
 </style>

@@ -1,9 +1,14 @@
 <script>
 	import Modal from "./Modal/Modal.svelte";
+
+	let showModal = false;
+	function modalHandle() {
+		showModal = !showModal;
+	}
 </script>
 
 <main>
-	<Modal theProps={`in here!`} />
+	<Modal theProps={`in here!`} {showModal} on:click={modalHandle} />
 </main>
 
 <style>
