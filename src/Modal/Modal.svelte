@@ -10,7 +10,7 @@
     }
 
     function modalTextHandle() {
-        showModal = showModal ? false : true;
+        showModal = !showModal;
     }
 </script>
 
