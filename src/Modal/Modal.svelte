@@ -1,49 +1,16 @@
 <script>
-    import PeopleData from "../../data/people.json";
-    export let theProps = "default value";
-
-    let people = PeopleData;
-    export let showModal = false;
-
-    function handleClick(deleteId) {
-        //Remove the person by id
-        people = people.filter((savePerson) => savePerson.id != deleteId);
-    }
-
-    function modalTextHandle() {
-        showModal = !showModal;
-    }
+    export let showModal;
+    export let message;
+    export let isPromo = false;
 </script>
 
 {#if showModal}
-    <div class="backdrop" class:promo={showModal} on:click|self>
+    <div class="backdrop" class:promo={isPromo} on:click|self>
         <div class="modal">
-            <h1>The list of people {theProps}</h1>
+            <h1>Sign up for {message}!</h1>
         </div>
     </div>
-    <ul>
-        {#each people as person}
-            <li>
-                <table>
-                    <tr><th> Id: {person.id}</th></tr>
-                    <tr>Name: {person.name}</tr>
-                    <tr>Age: {person.age}</tr>
-                    <tr>
-                        <button on:click={() => handleClick(person.id)}>
-                            Remove
-                        </button>
-                    </tr>
-                </table>
-            </li>
-        {:else}
-            <!-- if peole is empty -->
-            <p>No information.</p>
-        {/each}
-    </ul>
 {/if}
-<button on:click={modalTextHandle}>
-    {showModal ? `Hide` : `Show`}
-</button>
 
 <style>
     .backdrop {
@@ -62,14 +29,7 @@
     }
 
     .promo .modal {
-        background: dodgerblue;
-    }
-
-    .promo .modal h1 {
+        background: crimson;
         color: white;
-    }
-
-    .promo {
-        background: rgba(255, 255, 255, 0.5);
     }
 </style>

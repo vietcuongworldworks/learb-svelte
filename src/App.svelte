@@ -1,14 +1,43 @@
 <script>
 	import Modal from "./Modal/Modal.svelte";
+	import PeopleData from "../data/people.json";
 
+	let people = PeopleData;
 	let showModal = false;
-	function modalHandle() {
+
+	const toggleModal = () => {
 		showModal = !showModal;
-	}
+	};
+
+	const handleClick = (deleteId) => {
+		//Remove the person by id
+		people = people.filter((savePerson) => savePerson.id != deleteId);
+	};
 </script>
 
+<Modal
+	message={`The modal!`}
+	{showModal}
+	on:click={toggleModal}
+	isPromo={true}
+/>
 <main>
-	<Modal theProps={`in here!`} {showModal} on:click={modalHandle} />
+	<button on:click={toggleModal}>Open modal</button>
+	<dl>
+		{#each people as person}
+			<dt><h4>Id: {person.id}</h4></dt>
+			<dd>Name: {person.name}</dd>
+			<dd>Age: {person.age}</dd>
+			<dd>
+				<button on:click={() => handleClick(person.id)}>
+					Remove
+				</button>
+			</dd>
+		{:else}
+			<!-- if peole is empty -->
+			<p>No information...</p>
+		{/each}
+	</dl>
 </main>
 
 <style>
