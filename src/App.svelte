@@ -1,35 +1,9 @@
 <script>
-	// export let name;
-	import PeopleData from "../data/people.json";
-	let people = PeopleData;
-
-	function handleClick(deleteId) {
-		//Remove the person by id
-		people = people.filter((savePerson) => savePerson.id != deleteId);
-	}
+	import Modal from "./Modal/Modal.svelte";
 </script>
 
 <main>
-	<ul>
-		{#each people as person}
-			<li>
-				<p>
-					<b>Id: {person.id}</b><br />
-					Name: {person.name}<br />
-					Age: {person.age}<br />
-					{#if person.id % 2 === 0}
-						Even
-					{:else}
-						Odd
-					{/if}
-				</p>
-				<button on:click={() => handleClick(person.id)}>Remove</button>
-			</li>
-		{:else}
-			<!-- if peole is empty -->
-			<p>No information.</p>
-		{/each}
-	</ul>
+	<Modal />
 </main>
 
 <style>
