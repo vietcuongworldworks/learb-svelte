@@ -1,7 +1,7 @@
 <script>
     export let showModal;
     export let message;
-    export let isPromo = false;
+    export let isPromo;
 </script>
 
 {#if showModal}
