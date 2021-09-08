@@ -1,4 +1,5 @@
 <script>
+	import AddPersonForm from "./AddPersonForm.svelte";
 	import Modal from "./Modal.svelte";
 	import PeopleData from "../data/people.json";
 
@@ -17,13 +18,7 @@
 
 <Modal {showModal} on:click={toggleModal}>
 	<!-- <h3>Add a new person</h3> -->
-	<form>
-		<input type="text" placeholder="id" />
-		<input type="text" placeholder="name" />
-		<input type="text" placeholder="color" />
-		<input type="text" placeholder="age" />
-		<button>Add person</button>
-	</form>
+	<AddPersonForm />
 	<div slot="title"><h3>Add a new person</h3></div>
 </Modal>
 
