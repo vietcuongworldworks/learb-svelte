@@ -1,5 +1,5 @@
 <script>
-	import Modal from "./Modal/Modal.svelte";
+	import Modal from "./Modal.svelte";
 	import PeopleData from "../data/people.json";
 
 	let people = PeopleData;
