@@ -1,13 +1,14 @@
 <script>
     export let showModal;
-    export let message;
+    // export let message;
     export let isPromo;
 </script>
 
 {#if showModal}
     <div class="backdrop" class:promo={isPromo} on:click|self>
         <div class="modal">
-            <h1>Sign up for {message}!</h1>
+            <slot name="title" />
+            <slot />
         </div>
     </div>
 {/if}

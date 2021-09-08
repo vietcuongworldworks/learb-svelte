@@ -15,12 +15,18 @@
 	};
 </script>
 
-<Modal
-	message={`The modal!`}
-	{showModal}
-	on:click={toggleModal}
-	isPromo={true}
-/>
+<Modal {showModal} on:click={toggleModal}>
+	<!-- <h3>Add a new person</h3> -->
+	<form>
+		<input type="text" placeholder="id" />
+		<input type="text" placeholder="name" />
+		<input type="text" placeholder="color" />
+		<input type="text" placeholder="age" />
+		<button>Add person</button>
+	</form>
+	<div slot="title"><h3>Add a new person</h3></div>
+</Modal>
+
 <main>
 	<button on:click={toggleModal}>Open modal</button>
 	<dl>
