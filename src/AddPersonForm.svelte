@@ -3,16 +3,14 @@
     let name = "Vietcuong";
     let color = "blue";
     let age = 27;
-
-    let flag1 = false;
-    let flag2 = false;
-
     let flag = [];
+
+    let type;
 
     function handleSubmit() {
         console.log(id, name, color, age);
-        console.log(flag1, flag2);
         console.log(flag);
+        console.log(type);
     }
 </script>
 
@@ -22,23 +20,22 @@
     <input type="text" placeholder="color" bind:value={color} />
     <input type="number" placeholder="age" bind:value={age} />
 
-    <input
-        type="checkbox"
-        bind:group={flag}
-        bind:checked={flag1}
-        value="Flag 01"
-    />
-    Flag 01
-    <input
-        type="checkbox"
-        bind:group={flag}
-        bind:checked={flag2}
-        value="Flag 02"
-    />
-    Flag 02
+    <input type="checkbox" bind:group={flag} value="Flag 01" /> Flag 01
+    <input type="checkbox" bind:group={flag} value="Flag 02" /> Flag 02
 
+    <label for={type}>Type:</label>
+    <select bind:value={type}>
+        <option value="Speed">Speed</option>
+        <option value="Wild">Wild</option>
+        <option value="Wild">Technic</option>
+        <option value="Wild">Deadheat</option>
+        <option value="Wild">Tridoron</option>
+    </select>
     <button>Add person</button>
 </form>
 
 <style>
+    label {
+        position: fixed;
+    }
 </style>
