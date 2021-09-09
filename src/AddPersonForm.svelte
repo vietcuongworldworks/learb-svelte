@@ -4,8 +4,12 @@
     let color = "blue";
     let age = 27;
 
+    let flag1 = false;
+    let flag2 = false;
+
     function handleSubmit() {
         console.log(id, name, color, age);
+        console.log(flag1, flag2);
     }
 </script>
 
@@ -14,6 +18,10 @@
     <input type="text" placeholder="name" bind:value={name} />
     <input type="text" placeholder="color" bind:value={color} />
     <input type="number" placeholder="age" bind:value={age} />
+
+    <input type="checkbox" bind:checked={flag1} /> Flag 1
+    <input type="checkbox" bind:checked={flag2} /> Flag 2
+
     <button>Add person</button>
 </form>
 
