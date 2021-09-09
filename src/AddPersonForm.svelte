@@ -22,20 +22,21 @@
 
     <input type="checkbox" bind:group={flag} value="Flag 01" /> Flag 01
     <input type="checkbox" bind:group={flag} value="Flag 02" /> Flag 02
-
-    <label for={type}>Type:</label>
-    <select bind:value={type}>
-        <option value="Speed">Speed</option>
-        <option value="Wild">Wild</option>
-        <option value="Wild">Technic</option>
-        <option value="Wild">Deadheat</option>
-        <option value="Wild">Tridoron</option>
-    </select>
+    <div>
+        <label for={type}>Type:</label>
+        <select bind:value={type}>
+            <option value="Speed">Speed</option>
+            <option value="Wild">Wild</option>
+            <option value="Technic">Technic</option>
+            <option value="Deadheat">Deadheat</option>
+            <option value="Tridoron">Tridoron</option>
+        </select>
+    </div>
     <button>Add person</button>
 </form>
 
 <style>
     label {
-        position: fixed;
+        display: inline;
     }
 </style>
